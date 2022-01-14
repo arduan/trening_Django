@@ -17,10 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 from mysite import urls
-from mysite.views import index
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
     path('', include(urls)),
     ]

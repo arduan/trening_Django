@@ -1,21 +1,9 @@
-from django.shortcuts import render
-from django.views import View
+
 from django.views.generic import TemplateView
 
 
-def index(request):
-    ip = request.META.get('REMOTE_ADDR')
-    context = {
-        'name': 'Виталий',
-        'age': 26,
-        'ip': ip,
-    }
-    return render(request, 'mysite/index.html', context)
-
-
-# class About(View):
-#     def get(self, request):
-#         return render(request, 'mysite/about.html', {})
+class Index(TemplateView):
+    template_name = 'mysite/index.html'
 
 
 class About(TemplateView):
@@ -25,5 +13,5 @@ class About(TemplateView):
         context = super(About, self).get_context_data(**kwargs)
         context['title'] = 'О сайте'
         context['name'] = 'Бесплатные объявления'
-        context['description'] = 'Lorem lkj jlkjd kjf; eiuiufhasjkldk'
+        context['description'] = 'Lorem lkj jlkjd kjf; eiuiufhasjkldk авплжд Это просто текст'
         return context

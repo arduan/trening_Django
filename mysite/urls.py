@@ -5,6 +5,6 @@ from mysite import views
 
 urlpatterns = [
 
-    # path('about/', about, name='about'),
+    path('', views.Index.as_view(), name='index'),
     path('about/', views.About.as_view(), name='about'),
     ]
