@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{ title }}</title>
 </head>
 <body>
 <p>Это страница о сайте.</p>
 <p>Это просто добавленное в код</p>
-<ul>
-    {% for cont in context %}
-    <li>Моя фамилия {{ cont }}</li>
-    {% endfor %}
-</ul>
+<p>{{ name }}</p>
+<p>{{ description }}</p>
 
 </body>
 </html>
