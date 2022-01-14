@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import View
 
 
 def index(request):
@@ -10,8 +11,7 @@ def index(request):
     }
     return render(request, 'mysite/index.html', context)
 
-def about(request):
-    context = ['Иванов', 'Петров', 'Сидоров']
 
-    return render(request, 'mysite/about.html', {'context': context})
-
+class About(View):
+    def get(self, request):
+        return render(request, 'mysite/about.html', {})
