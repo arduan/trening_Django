@@ -7,6 +7,11 @@
 <body>
 <p>Это страница о сайте.</p>
 <p>Это просто добавленное в код</p>
-<p>Моя фамилия {{ last_name }}</p>
+<ul>
+    {% for cont in context %}
+    <li>Моя фамилия {{ cont }}</li>
+    {% endfor %}
+</ul>
+
 </body>
 </html>

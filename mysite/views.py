@@ -11,7 +11,7 @@ def index(request):
     return render(request, 'mysite/index.html', context)
 
 def about(request):
-    context = {'last_name': 'Иванов'}
+    context = ['Иванов', 'Петров', 'Сидоров']
 
-    return render(request, 'mysite/about.html', context)
+    return render(request, 'mysite/about.html', {'context': context})
 
