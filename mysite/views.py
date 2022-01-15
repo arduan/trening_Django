@@ -14,6 +14,6 @@ class About(TemplateView):
         context['title'] = 'О сайте'
         context['name'] = 'Бесплатные объявления'
         context['description'] = 'Lorem lkj jlkjd kjf; eiuiufhasjkldk авплжд Это просто текст'
-        dic_name = {'name': 'Иванов'}
+        dic_name = {'name': 'Виталий', 'last_name': 'Иванов'}
         context = dic_name
         return context
