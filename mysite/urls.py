@@ -1,7 +1,7 @@
 from django.urls import path
 
 from mysite import views
-# from mysite.views import about
+
 
 urlpatterns = [
 
