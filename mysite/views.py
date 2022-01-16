@@ -8,10 +8,9 @@ class Index(TemplateView):
 
 class About(TemplateView):
     template_name = 'mysite/about.html'
-    model = Patients
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['name_list'] = Patients.objects.all()
+        context['name_list'] = Patients.objects.order_by()
 
         return context
