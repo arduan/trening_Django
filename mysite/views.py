@@ -1,9 +1,13 @@
 
 from django.views.generic import TemplateView
+from .models import Patients
 
 
 class Index(TemplateView):
     template_name = 'mysite/index.html'
+
+    def context_data_patient(self):
+        return Patients.objects.order_by('name')
 
 
 class About(TemplateView):
