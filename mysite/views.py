@@ -19,4 +19,4 @@ class About(TemplateView):
 class PatientsListView(generic.ListView):
     model = Patients
     template_name = 'patients_list_view.html'
-
+    queryset = Patients.objects.all()
