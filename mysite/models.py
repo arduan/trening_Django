@@ -9,3 +9,6 @@ class Patients(models.Model):
     name = models.CharField(max_length=30, verbose_name='Фамилия пациенте')
     age = models.IntegerField(null=True, verbose_name='Возраст')
     pulse = models.IntegerField(null=True, verbose_name='Пульс')
+
+    def __str__(self):
+        return self.name
