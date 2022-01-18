@@ -1,4 +1,4 @@
-from django.views import generic
+
 from django.views.generic import TemplateView, ListView, DetailView
 from .models import Patients
 
@@ -16,12 +16,12 @@ class About(TemplateView):
         return context
 
 
-class PatientsListView(generic.ListView):
+class PatientsListView(ListView):
     model = Patients
     template_name = 'patients_list.html'
     queryset = Patients.objects.all()
 
 
-class PatientsDetailView(generic.DetailView):
+class PatientsDetailView(DetailView):
     model = Patients
-    template_name = 'patients_detail.html'
+
