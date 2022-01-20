@@ -18,11 +18,11 @@ class About(TemplateView):
 
 class PatientsListView(ListView):
     model = Patients
-    template_name = 'mysite/templates/patients_list.html'
+    template_name = 'patients_list.html'
     queryset = Patients.objects.all()
 
 
 class PatientsDetailView(DetailView):
     model = Patients
-    template_name = 'mysite/templates/patients_detail.html'
+    template_name = 'patients_detail.html'
 
