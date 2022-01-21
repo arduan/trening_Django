@@ -1,4 +1,4 @@
-from django.db.models import Avg
+from django.db.models import Avg, Max
 from django.views.generic import TemplateView, ListView, DetailView, DateDetailView
 from .models import Patients
 
@@ -21,7 +21,7 @@ class PatientsListView(ListView):
     template_name = 'patients_list.html'
     queryset = Patients.objects.all()
     counts = Patients.objects.count()
-    avg = Patients.objects.aggregate(Avg('age'))
+    max = Patients.objects.aggregate(Max('age'))
 
 
 
