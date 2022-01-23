@@ -21,7 +21,7 @@ class PatientsListView(ListView):
     template_name = 'patients_list.html'
     queryset = Patients.objects.all()
     counts = Patients.objects.count()
-    age_max = Patients.objects.aggregate(Max('age'))
+    age_max = model.objects.all().aggregate(Max('age'))
 
 
 class PatientsDetailView(DetailView):
