@@ -24,9 +24,6 @@ class PatientsListView(ListView):
     age_max = Patients.objects.aggregate(Max('age'))
 
 
-
-
 class PatientsDetailView(DetailView):
     model = Patients
     template_name = 'patients_detail.html'
-
