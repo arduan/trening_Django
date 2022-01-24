@@ -14,6 +14,7 @@ class About(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(About, self).get_context_data(**kwargs)
         context['my_name'] = 'Иванов Виталий Иванович'
+        context['my_email'] = 'arduan.ivanov@yandex.ru'
         return context
 
 
