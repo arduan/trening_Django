@@ -22,7 +22,7 @@ class PatientsListView(ListView):
     template_name = 'patients_list.html'
     queryset = Patients.objects.all()
     counts = Patients.objects.count()
-    age_max = model.objects.all().aggregate(Max('age'))
+    age_max = Patients.objects.all().aggregate(Max('age'))
 
 
 class PatientsDetailView(DetailView):
@@ -30,6 +30,3 @@ class PatientsDetailView(DetailView):
     template_name = 'patients_detail.html'
 
 
-def max_age(request):
-    age_max = Patients.objects.all().aggregate(Max('age'))
-    return render(request, 'patients_list.html', {'age_max': age_max})
