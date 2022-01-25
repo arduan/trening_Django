@@ -1,4 +1,5 @@
 from django.db.models import Avg, Max, Min, Count, Sum
+from django.utils.datetime_safe import datetime
 
 from django.views.generic import TemplateView, ListView, DetailView, DateDetailView
 from .models import Patients
@@ -36,6 +37,7 @@ class PatientStatisticsView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
+        context['time_now'] = datetime.now()
         context['age_statistics'] = Patients.objects.aggregate(Max('age'), Min('age'), Avg('age'), Count('age'),
                                                                Sum('age'))
         return context
