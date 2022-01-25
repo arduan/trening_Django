@@ -1,5 +1,6 @@
 from django.db.models import Avg, Max
 from django.shortcuts import render
+from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView, DateDetailView
 from .models import Patients
 
@@ -31,7 +32,7 @@ class PatientsDetailView(DetailView):
     template_name = 'patients_detail.html'
 
 
-class PatientMaxView(ListView):
+class PatientMaxView(TemplateView):
     model = Patients
     template_name = 'patient_max.html'
     age_max = Patients.objects.all().aggregate(Max('age'))
