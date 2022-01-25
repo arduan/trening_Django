@@ -1,6 +1,5 @@
-from django.db.models import Avg, Max, Min, Count
-from django.shortcuts import render
-from django.views import View
+from django.db.models import Avg, Max, Min, Count, Sum
+
 from django.views.generic import TemplateView, ListView, DetailView, DateDetailView
 from .models import Patients
 
@@ -24,7 +23,6 @@ class PatientsListView(ListView):
     template_name = 'patients_list.html'
     queryset = Patients.objects.all()
     counts = Patients.objects.count()
-    # age_max = Patients.objects.all().aggregate(Max('age'))
 
 
 class PatientsDetailView(DetailView):
@@ -32,13 +30,12 @@ class PatientsDetailView(DetailView):
     template_name = 'patients_detail.html'
 
 
-class PatientMaxView(ListView):
+class PatientStatisticsView(ListView):
     model = Patients
     template_name = 'patient_max.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['age_statistics'] = Patients.objects.aggregate(Max('age'), Min('age'), Avg('age'), Count('age'))
+        context['age_statistics'] = Patients.objects.aggregate(Max('age'), Min('age'), Avg('age'), Count('age'),
+                                                               Sum('age'))
         return context
-
-
