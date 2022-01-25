@@ -35,5 +35,10 @@ class PatientsDetailView(DetailView):
 class PatientMaxView(TemplateView):
     model = Patients
     template_name = 'patient_max.html'
-    age_max = Patients.objects.all().aggregate(Max('age'))
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['age_max'] = Patients.objects.aggregate(Max('age'))
+        return context
+
 
