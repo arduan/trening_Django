@@ -34,8 +34,8 @@ class PatientStatisticsView(ListView):
     model = Patients
     template_name = 'patient_max.html'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
         context['age_statistics'] = Patients.objects.aggregate(Max('age'), Min('age'), Avg('age'), Count('age'),
                                                                Sum('age'))
         return context
