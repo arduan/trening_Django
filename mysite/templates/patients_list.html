@@ -7,7 +7,7 @@
 <body>
 
 <ul>
-    {% for patient in object_list %}
+    {% for patient in patients_list %}
      <li>
          <a href="{% url 'detail' pk=patient.pk %}">{{ patient.name }} </a>
     </li>
