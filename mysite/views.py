@@ -3,6 +3,7 @@ from django.utils.datetime_safe import datetime
 
 from django.views.generic import TemplateView, ListView, DetailView, DateDetailView
 from .models import Patients
+from .forms import ArticleForm
 
 
 class Index(TemplateView):
@@ -41,3 +42,9 @@ class PatientStatisticsView(ListView):
         context['age_statistics'] = Patients.objects.aggregate(Max('age'), Min('age'), Avg('age'), Count('age'),
                                                                Sum('age'))
         return context
+
+
+class ArticleFormView(ListView):
+    model = Patients
+    template_name = 'form_view.html'
+    form = ArticleForm

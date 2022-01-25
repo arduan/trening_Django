@@ -9,7 +9,7 @@ class Patients(models.Model):
     name = models.CharField(max_length=30, null=True, blank=True, verbose_name='Фамилия пациенте')
     age = models.IntegerField(null=True, blank=True, verbose_name='Возраст')
     pulse = models.IntegerField(null=True, blank=True, verbose_name='Пульс')
-    date = models.DateTimeField (null=True, blank=True, verbose_name='Дата')
+    date = models.DateTimeField(null=True, blank=True, verbose_name='Дата')
 
     def __str__(self):
         return self.name
