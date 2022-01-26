@@ -1,9 +1,12 @@
 from django.db.models import Avg, Max, Min, Count, Sum
+from django.shortcuts import render
 from django.utils.datetime_safe import datetime
 
 from django.views.generic import TemplateView, ListView, DetailView, DateDetailView
+
+from .forms import form_model
 from .models import Patients
-from .forms import ArticleForm
+
 
 
 class Index(TemplateView):
@@ -44,7 +47,6 @@ class PatientStatisticsView(ListView):
         return context
 
 
-class ArticleFormView(ListView):
-    model = Patients
-    template_name = 'form_view.html'
-    form = ArticleForm
+def my_form(request):
+    form = form_model(request.POST)
+    return render(request, 'form_view.html', {'form': form})
