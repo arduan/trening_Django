@@ -4,9 +4,8 @@ from django.utils.datetime_safe import datetime
 
 from django.views.generic import TemplateView, ListView, DetailView, DateDetailView
 
-from .forms import form_model
+from .forms import form_model, UniverseForm
 from .models import Patients
-
 
 
 class Index(TemplateView):
@@ -50,3 +49,8 @@ class PatientStatisticsView(ListView):
 def my_form(request):
     form = form_model(request.POST)
     return render(request, 'form_view.html', {'form': form})
+
+
+def index_form(request):
+    context = {'form': UniverseForm()}
+    return render(request, 'form_index.html', context)
