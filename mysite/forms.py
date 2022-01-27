@@ -16,4 +16,4 @@ class UniverseForm(forms.Form):
     age = forms.IntegerField()
     pulse = forms.IntegerField()
     date = forms.DateField()
-    subject = forms.ChoiceField(choices=SUBJECT_CHOICES)
+    subject = forms.ChoiceField(choices=SUBJECT_CHOICES, widget=forms.RadioSelect)
