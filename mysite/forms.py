@@ -6,14 +6,14 @@ from django import forms
 form_model = modelform_factory(Patients, fields=('name', 'age', 'pulse', 'date'))
 
 class UniverseForm(forms.Form):
-    # SUBJECT_CHOICES = (
-    #     (1, 'Web Development'),
-    #     (2, 'System Programming'),
-    #     (3, 'Data Science')
-    # )
+    SUBJECT_CHOICES = (
+        (1, 'Хирургическое отделение'),
+        (2, 'Терапевтическое отделение'),
+        (3, 'Инфекционное отделение'),
+    )
 
     name = forms.CharField()
     age = forms.IntegerField()
     pulse = forms.IntegerField()
     date = forms.DateField()
-    # subject = forms.CharField(choices=SUBJECT_CHOICES)
+    subject = forms.ChoiceField(choices=SUBJECT_CHOICES)
