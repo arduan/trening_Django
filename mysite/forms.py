@@ -12,8 +12,8 @@ class UniverseForm(forms.Form):
         (3, 'Инфекционное отделение'),
     )
 
-    name = forms.CharField()
-    age = forms.IntegerField()
-    pulse = forms.IntegerField()
-    date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
-    subject = forms.ChoiceField(choices=SUBJECT_CHOICES, widget=forms.RadioSelect)
+    name = forms.CharField(label='Фамилия')
+    age = forms.IntegerField(label='Возраст')
+    pulse = forms.IntegerField(label='Пульс')
+    date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), label='Дата')
+    subject = forms.ChoiceField(choices=SUBJECT_CHOICES, widget=forms.RadioSelect, label='Профильное отделение')
