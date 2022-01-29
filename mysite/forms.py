@@ -17,3 +17,9 @@ class UniverseForm(forms.Form):
     pulse = forms.IntegerField(label='Пульс')
     date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), label='Дата')
     subject = forms.ChoiceField(choices=SUBJECT_CHOICES, widget=forms.RadioSelect, label='Профильное отделение')
+
+
+class AddPatientForm(forms.ModelForm):
+    class Meta:
+        model = Patients
+        fields = '__all__'

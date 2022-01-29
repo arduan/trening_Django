@@ -2,9 +2,9 @@ from django.db.models import Avg, Max, Min, Count, Sum
 from django.shortcuts import render
 from django.utils.datetime_safe import datetime
 
-from django.views.generic import TemplateView, ListView, DetailView, DateDetailView
+from django.views.generic import TemplateView, ListView, DetailView
 
-from .forms import form_model, UniverseForm
+from .forms import form_model, UniverseForm, AddPatientForm
 from .models import Patients
 
 
@@ -54,3 +54,7 @@ def my_form(request):
 def index_form(request):
     context = {'form': UniverseForm()}
     return render(request, 'form_index.html', context)
+
+def index_form3(request):
+    context = {'form': AddPatientForm}
+    return render(request, 'form_index3.html', context)
