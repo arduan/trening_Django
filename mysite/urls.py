@@ -1,7 +1,7 @@
 from django.urls import path
 
 from mysite import views
-from .views import PatientsDetailView, PatientsListView, About, Index, PatientStatisticsView, index_form,index_form3
+from .views import PatientsDetailView, PatientsListView, About, Index, PatientStatisticsView, index_form,index_form3, MyCreateView
 
 
 urlpatterns = [
@@ -14,6 +14,7 @@ urlpatterns = [
     path('form_view/', views.my_form, name='form'),
     path('index_form/', index_form, name='form2'),
     path('index_form3/', index_form3, name='form3'),
+    path('create/', MyCreateView.as_view(), name='create'),
 
 
     ]

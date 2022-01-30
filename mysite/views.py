@@ -2,7 +2,7 @@ from django.db.models import Avg, Max, Min, Count, Sum
 from django.shortcuts import render, redirect
 from django.utils.datetime_safe import datetime
 
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView
 
 from .forms import form_model, UniverseForm, AddPatientForm
 from .models import Patients
@@ -60,6 +60,17 @@ def add_page(request):
             form = AddPatientForm()
 
         return render(request, 'form_index3.html', {'form': form})
+
+
+class MyCreateView(CreateView):
+    template_name = 'create.html'
+    form_class = form_model
+    success_url = '/patients_list/'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['name'] = Patients.objects.all()
+        return context
 
 
 def my_form(request):
