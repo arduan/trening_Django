@@ -1,5 +1,5 @@
 from django.db.models import Avg, Max, Min, Count, Sum
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.utils.datetime_safe import datetime
 
 from django.views.generic import TemplateView, ListView, DetailView
@@ -46,6 +46,22 @@ class PatientStatisticsView(ListView):
         return context
 
 
+def add_page(request):
+    if request.method == 'POST':
+        form = AddPatientForm(request.POST, request.FILES)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('form3')
+            except:
+                form.add_error(None, 'Ошибка добавления данных')
+
+        else:
+            form = AddPatientForm()
+
+        return render(request, 'form_index3.html', {'form': form})
+
+
 def my_form(request):
     form = form_model(request.POST)
     return render(request, 'form_view.html', {'form': form})
@@ -54,6 +70,7 @@ def my_form(request):
 def index_form(request):
     context = {'form': UniverseForm()}
     return render(request, 'form_index.html', context)
+
 
 def index_form3(request):
     context = {'form': AddPatientForm}
