@@ -4,7 +4,7 @@ from django.utils.datetime_safe import datetime
 
 from django.views.generic import TemplateView, ListView, DetailView, CreateView
 
-from .forms import form_model, UniverseForm, AddPatientForm
+from .forms import form_model
 from .models import Patients
 
 
