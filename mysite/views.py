@@ -46,22 +46,6 @@ class PatientStatisticsView(ListView):
         return context
 
 
-def add_page(request):
-    if request.method == 'POST':
-        form = AddPatientForm(request.POST, request.FILES)
-        if form.is_valid():
-            try:
-                form.save()
-                return redirect('form3')
-            except:
-                form.add_error(None, 'Ошибка добавления данных')
-
-        else:
-            form = AddPatientForm()
-
-        return render(request, 'form_index3.html', {'form': form})
-
-
 class MyCreateView(CreateView):
     template_name = 'create.html'
     form_class = form_model
@@ -73,16 +57,3 @@ class MyCreateView(CreateView):
         return context
 
 
-def my_form(request):
-    form = form_model(request.POST)
-    return render(request, 'form_view.html', {'form': form})
-
-
-def index_form(request):
-    context = {'form': UniverseForm()}
-    return render(request, 'form_index.html', context)
-
-
-def index_form3(request):
-    context = {'form': AddPatientForm}
-    return render(request, 'form_index3.html', context)

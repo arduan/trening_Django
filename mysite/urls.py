@@ -1,7 +1,7 @@
 from django.urls import path
 
 from mysite import views
-from .views import PatientsDetailView, PatientsListView, About, Index, PatientStatisticsView, index_form,index_form3, MyCreateView
+from .views import PatientsDetailView, PatientsListView, About, Index, PatientStatisticsView, MyCreateView
 
 
 urlpatterns = [
