@@ -9,6 +9,7 @@ class Patients(models.Model):
     """
     name = models.CharField(max_length=30, null=True, blank=True, verbose_name='Фамилия пациента')
     age = models.IntegerField(null=True, blank=True, verbose_name='Возраст')
+    note = models.TextField(null=True, blank=True, verbose_name='Дневник')
     pulse = models.IntegerField(null=True, blank=True, verbose_name='Пульс')
     date = models.DateTimeField(null=True, blank=True, default=datetime.now, verbose_name='Дата')
 

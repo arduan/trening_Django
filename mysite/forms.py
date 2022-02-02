@@ -2,7 +2,7 @@ from django.forms import modelform_factory
 from mysite.models import Patients
 from django import forms
 
-form_model = modelform_factory(Patients, fields=('name', 'age', 'pulse', 'date'))
+form_model = modelform_factory(Patients, fields=('name', 'age', 'note', 'pulse', 'date'))
 
 
 # class UniverseForm(forms.Form):
