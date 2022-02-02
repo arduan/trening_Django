@@ -13,5 +13,8 @@ class Patients(models.Model):
     pulse = models.IntegerField(null=True, blank=True, verbose_name='Пульс')
     date = models.DateTimeField(null=True, blank=True, default=datetime.now, verbose_name='Дата')
 
+    def get_absolute_url(self):
+        return f'/create/{self.id}'
+
     def __str__(self):
         return self.name

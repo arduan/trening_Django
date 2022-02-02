@@ -60,4 +60,4 @@ class MyCreateView(CreateView):
 class PacientUpdate(UpdateView):
     model = Patients
     fields = ['name', 'note']
-    template_name = 'update_form.html'
+    template_name = 'create.html'
