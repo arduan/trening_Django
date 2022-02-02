@@ -2,7 +2,7 @@ from django.db.models import Avg, Max, Min, Count, Sum
 from django.shortcuts import render, redirect
 from django.utils.datetime_safe import datetime
 
-from django.views.generic import TemplateView, ListView, DetailView, CreateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
 
 from .forms import form_model
 from .models import Patients
@@ -57,3 +57,7 @@ class MyCreateView(CreateView):
         return context
 
 
+class PacientUpdate(UpdateView):
+    model = Patients
+    fields = ['name', 'note']
+    template_name = 'update_form.html'

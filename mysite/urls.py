@@ -1,7 +1,7 @@
 from django.urls import path
 
 from mysite import views
-from .views import PatientsDetailView, PatientsListView, About, Index, PatientStatisticsView, MyCreateView
+from .views import PatientsDetailView, PatientsListView, About, Index, PatientStatisticsView, MyCreateView, PacientUpdate
 
 
 urlpatterns = [
@@ -15,6 +15,7 @@ urlpatterns = [
     path('index_form/',  MyCreateView.as_view(), name='form2'),
     path('index_form3/', MyCreateView.as_view(), name='form3'),
     path('create/', MyCreateView.as_view(), name='create'),
+    path('patients_detail/<int:pk>/update_form/', PacientUpdate.as_view(), name='update'),
 
 
     ]
