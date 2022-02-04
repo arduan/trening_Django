@@ -68,6 +68,6 @@ class PacientUpdate(UpdateView):
     Редактирование записи.
     """
     model = Patients
-    fields = ['name', 'note']
+    fields = ['name', 'age', 'note', 'pulse', 'date']
     template_name = 'create.html'
     success_url = '/patients_list/'
