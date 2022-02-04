@@ -35,6 +35,9 @@ class PatientsDetailView(DetailView):
 
 
 class PatientStatisticsView(ListView):
+    """
+    Статистика по пациентам.
+    """
     model = Patients
     template_name = 'patient_max.html'
 
