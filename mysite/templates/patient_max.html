@@ -1,3 +1,4 @@
+{% extends 'mysite/base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +6,17 @@
     <title>Title</title>
 </head>
 <body>
-<p>Количество пациентов --- {{ age_statistics.age__count}} человек</p>
-<p>Максимальный возраст --- {{ age_statistics.age__max}} лет</p>
-<p>Минимальный возраст --- {{ age_statistics.age__min}} лет</p>
-<p>Средний возраст --- {{ age_statistics.age__avg}} лет</p>
-<p>Сумма возрастов --- {{ age_statistics.age__sum}} годов</p>
-<p>Текущее время --- {{ time_now}} </p>
+{% block content %}
+    <p>Количество пациентов --- {{ age_statistics.age__count}} человек</p>
+    <p>Максимальный возраст --- {{ age_statistics.age__max}} лет</p>
+    <p>Минимальный возраст --- {{ age_statistics.age__min}} лет</p>
+    <p>Средний возраст --- {{ age_statistics.age__avg}} лет</p>
+    <p>Сумма возрастов --- {{ age_statistics.age__sum}} годов</p>
+    <p>Текущее время --- {{ time_now}} </p>
 
 <a href="{% url 'index' %}">Вернуться на главную страницу.</a>
+{% endblock %}
+
 
 </body>
 </html>
