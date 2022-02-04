@@ -47,6 +47,9 @@ class PatientStatisticsView(ListView):
 
 
 class MyCreateView(CreateView):
+    """
+    Создание записи в базу данных.
+    """
     template_name = 'create.html'
     form_class = form_model
     success_url = '/patients_list/'
@@ -58,6 +61,9 @@ class MyCreateView(CreateView):
 
 
 class PacientUpdate(UpdateView):
+    """
+    Редактирование записи.
+    """
     model = Patients
     fields = ['name', 'note']
     template_name = 'create.html'
