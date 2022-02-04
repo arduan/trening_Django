@@ -1,9 +1,12 @@
+{% extends 'mysite/base.html' %}
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% block content%}
 <body>
     <p>Фамилия -- {{ object.name }}</p>
     <p>Возраст -- {{ object.age }}</p>
@@ -13,5 +16,6 @@
     <p>Время -- {{ object.date.time }}</p>
 
 <a href="{% url 'update' patients.pk  %}">На страницу редактирования</a>
+{% endblock %}
 </body>
 </html>
