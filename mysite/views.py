@@ -62,7 +62,3 @@ class PacientUpdate(UpdateView):
     fields = ['name', 'note']
     template_name = 'create.html'
     success_url = '/patients_list/'
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['name'] = Patients.objects.all()
-        return context
