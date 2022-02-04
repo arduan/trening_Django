@@ -1,6 +1,8 @@
+{% extends 'mysite/base.html' %}
 <h3>Это та форма на которую я ссылаюсь.</h3>
-
-
+{% block content%}
+ <a href="{% url 'index' %}">Вернуться на главную страницу.</a><br>
+{% endblock %}
 {% block content %}
     <h1>New post</h1>
     <form method="POST" class="post-form">
@@ -8,6 +10,7 @@
         {{ form.as_p }}
         <button type="submit" value="Добавить">Save</button>
     </form>
+
 {% endblock %}
 
-<a href="{% url 'index' %}">Вернуться на главную страницу.</a><br>
+

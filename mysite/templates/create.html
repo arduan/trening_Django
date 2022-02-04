@@ -1,3 +1,4 @@
+{% extends 'mysite/base.html'%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +8,12 @@
 <body>
 
 <h1>Добавление</h1>
-
+{% block content%}
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Добавить">
 </form>
+{% endblock %}
 </body>
 </html>
