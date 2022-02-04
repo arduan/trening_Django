@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>{% block title %}Главная{% endblock %}</title>
+</head>
+<body>
+<header>
+    <h1>Список пациентов</h1>
+</header>
+<nav>
+    <a href="{% url 'index' %}">Вернуться на главную страницу.</a><br>
+    <a href="{% url 'form' %}">На страницу формы.</a><br>
+    <a href="{% url 'form2' %}">На страницу формы 2.</a><br>
+    <a href="{% url 'form3' %}">На страницу формы 3.</a>,<br>
+    <a href="{% url 'create' %}">На страницу формы 4</a>
+</nav>
+<section>
+    {% block content %}
+
+    {% endblock %}
+</section>
+</body>
+</html>
