@@ -15,7 +15,8 @@
     <p>Дата -- {{ object.date}}</p>
     <p>Время -- {{ object.date.time }}</p>
 
-<a href="{% url 'update' patients.pk  %}">На страницу редактирования</a>
+    <a href="{% url 'update' patients.pk  %}">На страницу редактирования</a><br>
+    <a href="{% url 'delete' patients.pk %}">На страницу удаления.</a><br>
 {% endblock %}
 </body>
 </html>
