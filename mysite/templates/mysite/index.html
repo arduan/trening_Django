@@ -1,11 +1,13 @@
-
+{% extends 'mysite/base.html' %}
 <h2>Привет Виталий</h2>
 
 <p>Меня зовут {{ context }}</p>
 
 
+{% block content %}
+{##}
+{#<a href="{% url 'about' %}">На страницу about</a>#}
+{#<a href="{% url 'patients' %}">На страницу patents</a>#}
+{#<a href="{% url 'max' %}">На страницу max</a>#}
 
-
-<a href="{% url 'about' %}">На страницу about</a><br>
-<a href="{% url 'patients' %}">На страницу patents</a>,<br>
-<a href="{% url 'max' %}">На страницу max</a>
+{% endblock %}
