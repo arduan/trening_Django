@@ -2,7 +2,7 @@ from django.db.models import Avg, Max, Min, Count, Sum
 from django.shortcuts import render, redirect
 from django.utils.datetime_safe import datetime
 
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from .forms import form_model
 from .models import Patients
@@ -71,3 +71,13 @@ class PacientUpdate(UpdateView):
     fields = ['name', 'age', 'note', 'pulse', 'date']
     template_name = 'create.html'
     success_url = '/patients_list/'
+
+
+class PacientDeleteView(DeleteView):
+    model = Patients
+    success_url = '/'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['name'] = Patients.objects.all()
+        return context
