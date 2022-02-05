@@ -75,7 +75,7 @@ class PacientUpdate(UpdateView):
 
 class PacientDeleteView(DeleteView):
     model = Patients
-    success_url = '/'
+    success_url = '/patients_list/'
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
