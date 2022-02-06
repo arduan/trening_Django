@@ -81,3 +81,12 @@ class PacientDeleteView(DeleteView):
         context = super().get_context_data(*args, **kwargs)
         context['name'] = Patients.objects.all()
         return context
+
+# удаление авторов из БД
+# def delete(request, id):
+#     try:
+#         author = Author.objects.get(id=id)
+#         author.delete()
+#         return HttpResponseRedirect("/authors_add/")
+#     except Author.DoesNotExist:
+#         return HttpResponseNotFound("<h2>Автор не найден</h2>")
