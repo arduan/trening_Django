@@ -8,18 +8,19 @@
 </head>
 <body>
 <header>
-    <h1>Список пациентов</h1>
+
 </header>
 
 <ul>
     <li><a class="active" href="{% url 'index' %}">Главная</a></li>
     <li><a href="{% url 'patients' %}">Список пациентов</a></li>
+    <li><a href="{% url 'create' %}">Добавить пациента</a></li>
     <li><a href="{% url 'max' %}">Статистика</a></li>
     <li><a href="{% url 'about' %}">About</a></li>
 </ul>
 
 <div style="margin-left:25%;padding:1px 16px;height:1000px;">
-    <h2>Fixed Full-height Side Nav</h2>
+    <h2>Больница</h2>
   <section>
     {% block content %}
 

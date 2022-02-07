@@ -1,8 +1,9 @@
-header h1 {
+header h2 {
     font-size: 40px;
     text-transform: uppercase;
     text-align: center;
     background-color: #4ac1f7;
+    position: fixed;
 }
 body {
     margin: 0;

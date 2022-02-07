@@ -74,6 +74,9 @@ class PacientUpdate(UpdateView):
 
 
 class PacientDeleteView(DeleteView):
+    """
+    Удаление записей из базы.
+    """
     model = Patients
     success_url = '/patients_list/'
     template_name = 'delete.html'
