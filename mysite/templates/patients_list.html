@@ -11,8 +11,7 @@
     {% for patient in patients_list %}
      <li>
          <a href="{% url 'detail' pk=patient.pk %}">{{ patient.name }} </a>
-         <a href="/create/{{patient.id}}">Изменить</a>
-         <a href="/delete/{{patient.id}}">Удалить</a>
+
     </li>
     {% endfor %}
 </ul>
