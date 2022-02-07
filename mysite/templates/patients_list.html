@@ -8,8 +8,11 @@
 
 <body>
 
+
 {% block content%}
+
 <ul>
+    <p class="count">Количество пациентов --- {{ object_list.count }}</p>
     {% for patient in patients_list %}
      <li>
          <a href="{% url 'detail' pk=patient.pk %}">{{ patient.name }} </a>
@@ -19,7 +22,7 @@
     {% endfor %}
 </ul>
 {% endblock %}
-<p>Количество пациентов --- {{ object_list.count }}</p>
+
 <a href="{% url 'index' %}">Вернуться на главную страницу.</a><br>
 <a href="{% url 'form' %}">На страницу формы.</a><br>
 
