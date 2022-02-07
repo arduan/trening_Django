@@ -6,14 +6,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-{% block content%}
 <body>
+{% block content%}
+
     <p>Фамилия -- {{ object.name }}</p>
     <p>Возраст -- {{ object.age }}</p>
     <p>Дневник -- {{ object.note }}</p>
     <p>Пульс -- {{ object.pulse }}</p>
-    <p>Дата -- {{ object.date}}</p>
-    <p>Время -- {{ object.date.time }}</p>
+    <p>Дата регистрации -- {{ object.date}}</p>
+    <p>Время регистрации -- {{ object.date.time }}</p>
 
     <a href="{% url 'update' patients.pk  %}">На страницу редактирования</a><br>
     <a href="{% url 'create' %}">На страницу добавления </a><br>
