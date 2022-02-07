@@ -6,10 +6,14 @@
     <title>{{ title }}</title>
 </head>
 <body>
+{% block content %}
 <p>Это страница о сайте.</p>
 <p>Это просто добавленное в код</p>
 <p>Моя фамилия__  {{ my_name }}</p>
 <p>Мой почтовый ящик__  {{ my_email }}</p>
 <a href="{% url 'index' %}"> На главную страницу.</a>
+{% endblock %}
+
+
 </body>
 </html>
