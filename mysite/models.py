@@ -25,8 +25,8 @@ class AnalizPatient(models.Model):
     date = models.DateTimeField(null=True, blank=True, verbose_name='Дата анализа')
     leukocyte = models.FloatField(null=True, blank=True, verbose_name='Лейкоциты')
 
-    # def get_absolute_url(self):
-    #     return f'/create/{self.id}'
+    def get_absolute_url(self):
+        return f'/create/{self.id}'
 
     def __str__(self):
         return '%s %s ' % (self.date, self.leukocyte)

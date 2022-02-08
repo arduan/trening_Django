@@ -28,16 +28,15 @@ class PatientsListView(ListView):
     queryset = Patients.objects.all()
     counts = Patients.objects.count()
 
-# class PatientsAnalisView(ListView):
-#     models = AnalizPatient
-#     template_name = 'patients_detail.html'
-#     form_class = form_model
-# #     success_url = '/patients_list/'
-#
-#     def get_context_data(self, *args, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['name'] = Patients.objects.all()
-#         return context
+
+class PatientsAnalisView(ListView):
+    model = AnalizPatient
+    template_name = 'patients_detail.html'  #
+    #
+    # def get_context_data(self, *args, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['leukocyte'] = Patients.objects.all()
+    #     return context
 
 
 class PatientsDetailView(DetailView):
