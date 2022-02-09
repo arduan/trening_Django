@@ -6,8 +6,19 @@
 </head>
 <body>
 {% block content %}
+<ul>
+<li>
+      {% for leukocytes in leukocyte  %}
+      <p>
+       {{ leukocytes }}
+      </p>
+    {% endfor %}
+</li>
+</ul>
 
-    {{ leukocyte }}
+
+
+
 
 {% endblock %}
 
