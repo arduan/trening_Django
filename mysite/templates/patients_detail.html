@@ -17,9 +17,12 @@
     <p>Дата регистрации -- {{ object.date}}</p>
     <p>Время регистрации -- {{ object.date.time }}</p>
 
+
+
     <a href="{% url 'update' patients.pk  %}">На страницу редактирования</a><br>
     <a href="{% url 'create' %}">На страницу добавления </a><br>
     <a href="{% url 'delete' patients.pk %}">На страницу удаления.</a><br>
+    <a href="{% url 'analise' patients.pk %}">На страницу анализов.</a><br>
 
 {% endblock %}
 </body>
