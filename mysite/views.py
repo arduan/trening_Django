@@ -5,7 +5,7 @@ from django.utils.datetime_safe import datetime
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from .forms import form_model
-from .models import Patients, AnalizPatient
+from .models import Patients, Analise
 
 
 class Index(TemplateView):
@@ -29,8 +29,9 @@ class PatientsListView(ListView):
     counts = Patients.objects.count()
 
 
-class PatientsAnalisView(ListView):
-    model = AnalizPatient
+class PatientsAnaliseView(ListView):
+    model = Analise
+    queryset = Analise.objects.all()
     template_name = 'patients_detail.html'  #
     #
     # def get_context_data(self, *args, **kwargs):

@@ -1,5 +1,5 @@
 from django.forms import modelform_factory
-from mysite.models import Patients, AnalizPatient
+from mysite.models import Patients, Analise
 from django import forms
 
 form_model = modelform_factory(Patients, fields=('name', 'age', 'note', 'pulse', 'date'))
