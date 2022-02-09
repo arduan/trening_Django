@@ -21,7 +21,7 @@ class Patients(models.Model):
 
 
 class Analise(models.Model):
-    patient = models.ForeignKey('Patients', on_delete=models.CASCADE, null=True, verbose_name="Фамилия")
+    patient = models.OneToOneField('Patients', on_delete=models.CASCADE, null=True, verbose_name="Фамилия")
     date = models.DateTimeField(null=True, blank=True, verbose_name='Дата анализа')
     leukocyte = models.FloatField(null=True, blank=True, verbose_name='Лейкоциты')
 
