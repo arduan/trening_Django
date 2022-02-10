@@ -97,3 +97,5 @@ class PacientDeleteView(DeleteView):
         context = super().get_context_data(*args, **kwargs)
         context['name'] = Patients.objects.all()
         return context
+
+

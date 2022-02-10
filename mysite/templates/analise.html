@@ -8,18 +8,14 @@
 {% block content %}
 <ul>
 
-      {% for leukocytes in leukocyte %}
-         <li>
-             {{ leukocytes }}
+    {% for dates in date %}
+     <li>
+         {{ dates.date }}
+         {{ dates.leukocyte }}
 
-
-        </li>
+    </li>
     {% endfor %}
-
 </ul>
-
-
-
 
 
 {% endblock %}

@@ -22,6 +22,9 @@ class Patients(models.Model):
 
 
 class Analise(models.Model):
+    """
+    Модель анализов и гемодинамики.
+    """
     date = models.DateTimeField(null=True, blank=True, verbose_name='Дата анализа')
     leukocyte = models.FloatField(null=True, blank=True, verbose_name='Лейкоциты')
     hemoglobin = models.IntegerField(null=True, blank=True, verbose_name='Гемоглобин')
