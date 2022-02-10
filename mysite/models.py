@@ -13,6 +13,7 @@ class Patients(models.Model):
     pulse = models.IntegerField(null=True, blank=True, verbose_name='Пульс')
     date = models.DateTimeField(null=True, blank=True, default=datetime.now, verbose_name='Дата')
 
+
     def get_absolute_url(self):
         return f'/create/{self.id}'
 
@@ -21,9 +22,10 @@ class Patients(models.Model):
 
 
 class Analise(models.Model):
-    patient = models.OneToOneField('Patients', on_delete=models.CASCADE, null=True, verbose_name="Фамилия")
     date = models.DateTimeField(null=True, blank=True, verbose_name='Дата анализа')
     leukocyte = models.FloatField(null=True, blank=True, verbose_name='Лейкоциты')
+    hemoglobin = models.IntegerField(null=True, blank=True, verbose_name='Гемоглобин')
+    patient_id = models.ForeignKey('Patients', on_delete=models.CASCADE, null=True, verbose_name="Фамилия")
 
     def get_absolute_url(self):
         return f'/create/{self.id}'
