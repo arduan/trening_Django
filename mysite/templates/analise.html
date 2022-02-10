@@ -8,9 +8,10 @@
 {% block content %}
 <ul>
 
-      {% for leukocytes in leukocyte  %}
+      {% for dates in date  %}
          <li>
-             {{ leukocytes }}
+             {{ dates.patient }}
+             {{ dates.leukocyte }}
 
         </li>
     {% endfor %}
