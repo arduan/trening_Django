@@ -28,6 +28,8 @@ class Analise(models.Model):
     date = models.DateTimeField(null=True, blank=True, verbose_name='Дата анализа')
     leukocyte = models.FloatField(null=True, blank=True, verbose_name='Лейкоциты')
     hemoglobin = models.IntegerField(null=True, blank=True, verbose_name='Гемоглобин')
+    sys_ad = models.IntegerField(null=True, blank=True, verbose_name='Систолическое АД')
+    dias_ad = models.IntegerField(null=True, blank=True, verbose_name='Диастолическое АД')
     patient_id = models.ForeignKey('Patients', on_delete=models.CASCADE, null=True, verbose_name="Фамилия")
 
     def get_absolute_url(self):
