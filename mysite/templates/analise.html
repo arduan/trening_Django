@@ -10,10 +10,14 @@
 
 
 
-    {% for dates in date %}
+
+    {% for dates in analise_list %}
      <li>
-         {{ dates.date }}
+
+         <p>Фамилия пациента</p>{{ patient.name }}
+
          <p>Количество лейкоцитов ---{{ dates.leukocyte }}</p>
+         <p>Гемоглобин ---{{ dates.hemoglobin }}</p>
          <p>Систолическое Ад --- {{ dates.sys_ad }}</p>
          <p>Диастолическое Ад --- {{ dates.dias_ad }}</p>
 

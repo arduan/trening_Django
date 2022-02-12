@@ -12,7 +12,7 @@ class Patients(models.Model):
     note = models.TextField(null=True, blank=True, verbose_name='Дневник')
     pulse = models.IntegerField(null=True, blank=True, verbose_name='Пульс')
     date = models.DateTimeField(null=True, blank=True, default=datetime.now, verbose_name='Дата')
-    patient_id = models.ForeignKey('Analise', on_delete=models.CASCADE, null=True, verbose_name="id_name")
+    # patient_id = models.ForeignKey('Analise', on_delete=models.CASCADE, null=True, verbose_name="id_name")
 
     def get_absolute_url(self):
         return f'/create/{self.id}'
@@ -30,7 +30,7 @@ class Analise(models.Model):
     hemoglobin = models.IntegerField(null=True, blank=True, verbose_name='Гемоглобин')
     sys_ad = models.IntegerField(null=True, blank=True, verbose_name='Систолическое АД')
     dias_ad = models.IntegerField(null=True, blank=True, verbose_name='Диастолическое АД')
-    # patient_id = models.ForeignKey('Patients', on_delete=models.CASCADE, null=True, verbose_name="id_name")
+    patient_id = models.ForeignKey('Patients', on_delete=models.CASCADE, null=True, verbose_name="id_name")
 
     # def get_absolute_url(self):
     #     return f'/create/{self.id}'
