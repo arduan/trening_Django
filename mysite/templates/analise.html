@@ -11,10 +11,10 @@
 
 
 
-    {% for dates in analise_list %}
+    {% for dates in date %}
      <li>
 
-         <p>Фамилия пациента</p>{{ patient.name }}
+         <p>Фамилия пациента</p>{{ dates.patient_id.name }}
 
          <p>Количество лейкоцитов ---{{ dates.leukocyte }}</p>
          <p>Гемоглобин ---{{ dates.hemoglobin }}</p>

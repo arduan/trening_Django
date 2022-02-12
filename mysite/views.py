@@ -34,15 +34,15 @@ class PatientsAnaliseView(ListView):
     queryset = Analise.objects.all()
     template_name = 'analise.html'
 
-    # def get_context_data(self, *args, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['leukocyte'] = Analise.objects.all()
-    #     context['date'] = Analise.objects.all()
-    #     context['hemoglobin'] = Analise.objects.all()
-    #     context['sys_ad'] = Analise.objects.all()
-    #     context['dias_ad'] = Analise.objects.all()
-    #     context['patient_id'] = Analise.objects.all()
-    #     return context
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['leukocyte'] = Analise.objects.all()
+        context['date'] = Analise.objects.all()
+        context['hemoglobin'] = Analise.objects.all()
+        context['sys_ad'] = Analise.objects.all()
+        context['dias_ad'] = Analise.objects.all()
+        context['patient_id'] = Analise.objects.all()
+        return context
 
 
 class PatientsDetailView(DetailView):
