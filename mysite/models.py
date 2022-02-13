@@ -12,7 +12,6 @@ class Patients(models.Model):
     note = models.TextField(null=True, blank=True, verbose_name='Дневник')
     pulse = models.IntegerField(null=True, blank=True, verbose_name='Пульс')
     date = models.DateTimeField(null=True, blank=True, default=datetime.now, verbose_name='Дата')
-    patient_id = models.ForeignKey('Analise', on_delete=models.CASCADE, null=True, verbose_name="id_name")
 
     def get_absolute_url(self):
         return f'/create/{self.id}'
