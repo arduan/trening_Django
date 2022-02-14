@@ -2,28 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Анализы</title>
 </head>
 <body>
 {% block content %}
-<ul>
 
 
+         <p>Фамилия пациента</p>{% for names in patients %}{{ names.name }}{% endfor %}
 
 
-    {% for dates in date %}
-     <li>
+         <p>Гемоглобин ---<br>{% for h in hemoglobin %}{{ h.date }}<br>{{ h.hemoglobin }}<br>{% endfor %}</p>
+         <p>Лейкоциты ---<br>{% for l in date %}{{ l.date }}<br>{{ l.leukocyte }}<br>{% endfor %}</p>
+         <p>Систолическое АД ---<br>{% for s in date %}{{ s.date }}<br>{{ s }}<br>{% endfor %}</p>
+         <p>Диастолическое АД ---<br>{% for d in date %}{{ d.date }}<br>{{ d }}<br>{% endfor %}</p>
 
-         <p>Фамилия пациента</p>{{ dates.patient_id.name }}
-
-         <p>Количество лейкоцитов ---{{ dates.leukocyte }}</p>
-         <p>Гемоглобин ---{{ dates.hemoglobin }}</p>
-         <p>Систолическое Ад --- {{ dates.sys_ad }}</p>
-         <p>Диастолическое Ад --- {{ dates.dias_ad }}</p>
-
-    </li>
-    {% endfor %}
-</ul>
 
 
 {% endblock %}

@@ -18,4 +18,5 @@ urlpatterns = [
     path('patients_detail/<int:pk>/delete/', PacientDeleteView.as_view(), name='delete'),
 
 
+
     ]
