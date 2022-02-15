@@ -31,8 +31,8 @@ class Analise(models.Model):
     sys_ad = models.IntegerField(null=True, blank=True, verbose_name='Систолическое АД')
     dias_ad = models.IntegerField(null=True, blank=True, verbose_name='Диастолическое АД')
 
-    # def get_absolute_url(self):
-    #     return f'/create/{self.id}'
+    def get_absolute_url(self):
+        return f'/analise/{self.id}'
 
     def __str__(self):
         return '%s %s ' % (self.name, self.date)

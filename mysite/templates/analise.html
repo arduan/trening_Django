@@ -5,16 +5,17 @@
     <title>Анализы</title>
 </head>
 <body>
+
 {% block content %}
 
 
-         <p>Фамилия пациента</p>{% for names in patients %}{{ names.name }}{% endfor %}
+         <p>Фамилия пациента</p>{% for analise in analise_list %}{{ analise.pk }}{% endfor %}
 
 
-         <p>Гемоглобин ---<br>{% for h in hemoglobin %}{{ h.date }}<br>{{ h.hemoglobin }}<br>{% endfor %}</p>
-         <p>Лейкоциты ---<br>{% for l in date %}{{ l.date }}<br>{{ l.leukocyte }}<br>{% endfor %}</p>
-         <p>Систолическое АД ---<br>{% for s in date %}{{ s.date }}<br>{{ s }}<br>{% endfor %}</p>
-         <p>Диастолическое АД ---<br>{% for d in date %}{{ d.date }}<br>{{ d }}<br>{% endfor %}</p>
+         <p>Гемоглобин ---<br>{% for analise in analise_list %}{{ analise.date }}<br>{{ analise.hemoglobin }}<br>{% endfor %}</p>
+         <p>Лейкоциты ---<br>{% for analise in analise_list %}{{ analise.date }}<br>{{ analise.leukocyte }}<br>{% endfor %}</p>
+         <p>Систолическое АД ---<br>{% for analise in analise_list %}{{ analise.date }}<br>{{ analise.sys_ad }}<br>{% endfor %}</p>
+         <p>Диастолическое АД ---<br>{% for analise in analise_list %}{{ analise.date }}<br>{{ analise.dias_ad }}<br>{% endfor %}</p>
 
 
 
