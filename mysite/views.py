@@ -34,24 +34,24 @@ class PatientsDetailView(DetailView):
     template_name = 'patients_detail.html'
 
 
-class PatientsAnaliseView(ListView):
-    model = Analise
-    template_name = 'analise.html'
-
 # class PatientsAnaliseView(ListView):
 #     model = Analise
-#     queryset = Analise.objects.all()
 #     template_name = 'analise.html'
-#
-#     def get_context_data(self, *args, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['leukocyte'] = Analise.objects.all()
-#         context['date'] = Analise.objects.all()
-#         context['hemoglobin'] = Analise.objects.all()
-#         context['sys_ad'] = Analise.objects.all()
-#         context['dias_ad'] = Analise.objects.all()
-#         context['patient_id'] = Analise.objects.all()
-#         return context
+
+class PatientsAnaliseView(ListView):
+    model = Analise
+    queryset = Analise.objects.all()
+    template_name = 'analise.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['leukocyte'] = Analise.objects.all()
+        context['date'] = Analise.objects.all()
+        context['hemoglobin'] = Analise.objects.all()
+        context['sys_ad'] = Analise.objects.all()
+        context['dias_ad'] = Analise.objects.all()
+        context['name'] = Analise.objects.all()
+        return context
 
 
 class PatientStatisticsView(ListView):

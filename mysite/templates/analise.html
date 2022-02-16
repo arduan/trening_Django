@@ -8,8 +8,9 @@
 
 {% block content %}
 
+        {{ name }}
 
-         <p>Фамилия пациента</p>{% for analise in analise_list %}{{ analise.pk }}{% endfor %}
+         <p>Фамилия пациента</p>{% for name in name %}{{ name }}{% endfor %}
 
 
          <p>Гемоглобин ---<br>{% for analise in analise_list %}{{ analise.date }}<br>{{ analise.hemoglobin }}<br>{% endfor %}</p>
