@@ -9,13 +9,14 @@
 <body>
 {% block content%}
 
+
     <p>Фамилия -- {{ object.name }}</p>
     <p>Возраст -- {{ object.age }}</p>
     <p>Дневник -- {{ object.note }}</p>
     <p>Пульс -- {{ object.pulse }}</p>
-    <p>Лейкоциты -- {{ patients.pulse }}</p>
-    <p>Гемоглобин -- {{ analise.hemoglobin }}</p>
-    <p>Систолическое АД -- {{ analise.sys_ad }}</p>
+    <p>Лейкоциты -- {% for l in patients.analises.leukocyte %}{{ l }}{% endfor %}</p>
+    <p>Гемоглобин -- {{ patients.analises.hemoglobin }}</p>
+    <p>Систолическое АД -- {{ object.analises.sys_ad}}</p>
     <p>Диастолическое АД -- {{ analise.dias_ad}}</p>
 
     <p>Дата регистрации -- {{ object.date}}</p>
@@ -26,7 +27,7 @@
     <a href="{% url 'update' patients.pk  %}">На страницу редактирования</a><br>
     <a href="{% url 'create' %}">На страницу добавления </a><br>
     <a href="{% url 'delete' patients.pk %}">На страницу удаления.</a><br>
-    <a href="{% url 'analise' patients.pk %}">На страницу анализов.</a><br>
+
 
 
 {% endblock %}

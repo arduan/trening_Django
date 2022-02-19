@@ -2,11 +2,15 @@ from django.db import models
 from django.utils.datetime_safe import datetime
 
 
+
+
+
 class Patients(models.Model):
     """
     Первоначальная модель где будет фамилия, возраст и пульс
     для тренировки вычисляемых полей.
     """
+    analises = models.ForeignKey('Analise', on_delete=models.CASCADE, null=True, verbose_name="Анализы")
     name = models.CharField(max_length=30, null=True, blank=True, verbose_name='Фамилия пациента')
     age = models.IntegerField(null=True, blank=True, verbose_name='Возраст')
     note = models.TextField(null=True, blank=True, verbose_name='Дневник')
@@ -19,13 +23,12 @@ class Patients(models.Model):
     def __str__(self):
         return self.name
 
-
 class Analise(models.Model):
     """
     Модель анализов и гемодинамики.
     """
-    name = models.ForeignKey('Patients', on_delete=models.CASCADE, null=True, verbose_name="id_name")
-    date = models.DateTimeField(null=True, blank=True, verbose_name='Дата анализа')
+
+    date = models.DateTimeField(null=True, blank=True, db_index=True, verbose_name='Дата анализа')
     leukocyte = models.FloatField(null=True, blank=True, verbose_name='Лейкоциты')
     hemoglobin = models.IntegerField(null=True, blank=True, verbose_name='Гемоглобин')
     sys_ad = models.IntegerField(null=True, blank=True, verbose_name='Систолическое АД')
@@ -35,4 +38,4 @@ class Analise(models.Model):
         return f'/analise/{self.id}'
 
     def __str__(self):
-        return '%s %s ' % (self.name, self.date)
+        return '%s ' % (self.date)
