@@ -2,9 +2,6 @@ from django.db import models
 from django.utils.datetime_safe import datetime
 
 
-
-
-
 class Patients(models.Model):
     """
     Первоначальная модель где будет фамилия, возраст и пульс
@@ -23,6 +20,7 @@ class Patients(models.Model):
     def __str__(self):
         return self.name
 
+
 class Analise(models.Model):
     """
     Модель анализов и гемодинамики.
@@ -38,4 +36,4 @@ class Analise(models.Model):
         return f'/analise/{self.id}'
 
     def __str__(self):
-        return '%s ' % (self.date)
+        return '%s ' % (self.leukocyte)

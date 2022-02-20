@@ -14,8 +14,8 @@
     <p>Возраст -- {{ object.age }}</p>
     <p>Дневник -- {{ object.note }}</p>
     <p>Пульс -- {{ object.pulse }}</p>
-    <p>Лейкоциты -- {% for l in patients.analises.leukocyte %}{{ l }}{% endfor %}</p>
-    <p>Гемоглобин -- {{ patients.analises.hemoglobin }}</p>
+    <p>Лейкоциты -- {% for l in leukocyte %}{{ l }}{% endfor %}</p>
+    <p>Гемоглобин -- {{ hemoglobin }}</p>
     <p>Систолическое АД -- {{ object.analises.sys_ad}}</p>
     <p>Диастолическое АД -- {{ analise.dias_ad}}</p>
 
