@@ -34,6 +34,7 @@ class PatientsDetailView(DetailView):
     template_name = 'patients_detail.html'
 
 
+# This view displays a list of all the Analise objects associated with a particular Patient object
 class PatientsAnaliseView(ListView):
     model = Analise
     template_name = 'patients_detail.html'
@@ -54,6 +55,7 @@ class PatientsAnaliseView(ListView):
 #         return context
 
 
+# The PatientStatisticsView class is a subclass of ListView
 class PatientStatisticsView(ListView):
     """
     Статистика по пациентам.
@@ -69,6 +71,7 @@ class PatientStatisticsView(ListView):
         return context
 
 
+# Create a view that displays a form for creating a new patient and saving the form data to the database
 class MyCreateView(CreateView):
     """
     Создание записи в базу данных.

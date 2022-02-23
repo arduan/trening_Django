@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.datetime_safe import datetime
 
 
+# The Patients class is a model that defines the fields of a table in the database
 class Patients(models.Model):
     """
     Первоначальная модель где будет фамилия, возраст и пульс
