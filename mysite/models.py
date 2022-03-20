@@ -8,7 +8,7 @@ class Patients(models.Model):
     Первоначальная модель где будет фамилия, возраст и пульс
     для тренировки вычисляемых полей.
     """
-    analises = models.ForeignKey('Analise', on_delete=models.CASCADE, null=True, verbose_name="Анализы")
+    analise = models.ForeignKey('Analise', on_delete=models.CASCADE, null=True, verbose_name="Анализы")
     name = models.CharField(max_length=30, null=True, blank=True, verbose_name='Фамилия пациента')
     age = models.IntegerField(null=True, blank=True, verbose_name='Возраст')
     note = models.TextField(null=True, blank=True, verbose_name='Дневник')
