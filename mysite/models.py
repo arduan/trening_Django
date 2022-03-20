@@ -22,6 +22,7 @@ class Patients(models.Model):
         return self.name
 
 
+# This is a class that represents a single instance of an Analise
 class Analise(models.Model):
     """
     Модель анализов и гемодинамики.
